@@ -1,0 +1,28 @@
+{% extends 'components/base.html' %}
+
+{% block title %}
+    Котировки криптовалют. Главная страница
+{% endblock %}
+{% block content %}
+    <div class="search">
+        <form action="/search/" method="get">
+            <h2>Поиск криптовалюты по названию</h2>
+            <input type="search" id="search" name="name" value="{{ name }}">
+            <button class="action-btn" type="submit">Искать</button>
+        </form>
+    </div>
+    <h3>Список криптовалют</h3>
+    <form action="/sync/">
+        <div class="update-info">
+            <div class="info-span">
+                <span>Синхронизация информации о валютах и запись данных в базу</span>
+            </div>
+            <button class="action-btn" type="submit">Загрузить</button>
+        </div>
+    </form>
+    {% if currencies %}
+        {% include 'components/table.html' %}
+    {% else %}
+        {% include 'components/empty_block.html' %}
+    {% endif %}
+{% endblock %}

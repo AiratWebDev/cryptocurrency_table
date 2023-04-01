@@ -1,0 +1,175 @@
+body {
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    padding: 10px;
+    background-color: #f9fbfd;
+    color: #1a1a1a;
+}
+
+/* menu */
+.menu-item {
+    margin-right: 20px;
+}
+
+.menu-item a, .links-item a {
+    color: #1E90FF;
+    text-decoration: underline;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* search */
+.search {
+    margin-bottom: 30px;
+}
+
+.search input[type=search], .form-field input {
+    padding: 10px;
+    width: 30%;
+    border-radius: 8px;
+    border: 1px solid #989797;
+    margin-right: 5px;
+}
+
+/* button */
+.action-btn {
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    background: #20B2AA;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    width: fit-content;
+}
+
+/* update */
+.update-info {
+    margin: 15px 0;
+    display: flex;
+    border: 2px solid #DC143C;
+    color: #000;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.info-span {
+    align-self: center;
+    margin-right: 10px;
+}
+
+/* table */
+table {
+    border-spacing: 0;
+}
+
+.currency-table td, .currency-table th {
+    border-bottom: 1px solid #eeeeee;
+    padding: 8px;
+}
+
+.currency-table th {
+    padding: 12px 10px;
+    text-align: left;
+    background-color: #1E90FF;
+    color: white;
+}
+
+.in-favorites {
+    padding: 5px 11px;
+    cursor: pointer;
+    background-color: #20B2AA;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+.not-in-favorites {
+    padding: 5px 11px;
+    cursor: pointer;
+    background-color: #d9d9d9;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* forms */
+.form-field {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.form-errors ul {
+    color: #fff;
+    background-color: #F08080;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.form-hints {
+    background-color: #eaeaea;
+    color: #393939;
+    font-size: 13px;
+    padding: 5px;
+    border-radius: 5px;
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+.form-hints ul {
+    display: flex;
+    flex-direction: column;
+}
+
+/* news */
+.news-item {
+    display: flex;
+}
+
+.news-img img {
+    margin: 20px 20px 20px 0;
+    height: 200px;
+    width: 400px;
+}
+
+.news-info {
+    align-self: center;
+    margin-right: 70px;
+}
+
+/* empty block */
+.empty-block {
+    background-color: #d9dfeb;
+    width: 30%;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.empty-block-img {
+    margin-bottom: 10px;
+    width: 30%;
+}
+
+.empty-block p {
+    font-size: 18px;
+    margin-top: 0;
+}
+
+/* links-block */
+.links-item {
+    margin: 15px 0;
+}
+
+.links {
+    width: fit-content;
+}

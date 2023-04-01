@@ -1,0 +1,28 @@
+{% extends 'components/base.html' %}
+
+{% block title %}
+    Новости криптовалют
+{% endblock %}
+
+{% block content %}
+    <h2>Новости о криптовалютах</h2>
+    <div class="news">
+        {% for new in news %}
+            <div class="news-item">
+                <div class="news-img">
+                    {% if new.image_url is None %}
+                        <img src="https://cdn.decrypt.co/wp-content/uploads/2021/11/bitcoin-trading-volume-gID_4.jpeg"
+                             alt="">
+                    {% else %}
+                        <img src="{{ new.image_url }}" alt="">
+                    {% endif %}
+                </div>
+                <div class="news-info">
+                    <h3 class="news-title">{{ new.title }}</h3>
+                    <p class="news-description">{{ new.description|truncatechars:600 }}</p>
+                    <p class="news-date">{{ new.pubDate }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

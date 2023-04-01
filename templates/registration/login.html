@@ -1,0 +1,24 @@
+{% extends 'components/base.html' %}
+{% block title %}
+    Авторизация пользователя
+{% endblock %}
+{% block content %}
+    <h2>Вход в аккаунт</h2>
+    <div class="form">
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="form-errors">
+                {{ form.non_field_errors }}
+            </div>
+            {% for field in form %}
+                <div class="form-label">
+                    {{ field.label }}
+                </div>
+                <div class="form-field">
+                    {{ field }}
+                </div>
+            {% endfor %}
+            <button class="action-btn" type="submit">Войти</button>
+        </form>
+    </div>
+{% endblock %}

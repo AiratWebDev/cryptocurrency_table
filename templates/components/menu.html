@@ -1,0 +1,36 @@
+<div class="menu-container">
+    <nav>
+        <ul>
+            <div class="menu-item">
+                <li><a href="{% url 'main' %}">На главную</a></li>
+            </div>
+            <div class="menu-item">
+                <li><a href="{% url 'news' %}">Новости</a></li>
+            </div>
+            <div class="menu-item">
+                <li><a href="{% url 'favorites' %}">Избранное</a></li>
+            </div>
+            <div class="menu-item">
+                <li><a href="{% url 'links' %}">Ссылки API</a></li>
+            </div>
+            <div class="menu-item">
+                |
+            </div>
+            {% if user.is_authenticated %}
+                <div class="menu-item">
+                    Пользователь: {{ user }}
+                </div>
+                <div class="menu-item">
+                    <li><a href="{% url 'logout' %}">Выйти</a></li>
+                </div>
+            {% else %}
+                <div class="menu-item">
+                    <li><a href="{% url 'login' %}">Войти</a></li>
+                </div>
+                <div class="menu-item">
+                    <li><a href="{% url 'register' %}">Зарегистрироваться</a></li>
+                </div>
+            {% endif %}
+        </ul>
+    </nav>
+</div>

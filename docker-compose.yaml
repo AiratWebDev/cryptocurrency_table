@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  web:
+    container_name: 'web'
+    image: nginx:latest
+    depends_on:
+      - app
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+
+  app:
+    container_name: "app"
+    image: airat696/apptrix-crypto-django:0.1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"

@@ -1,0 +1,42 @@
+<table class="currency-table">
+    <tr>
+        <th></th>
+        <th>Название</th>
+        <th>Символ</th>
+        <th>Цена</th>
+        <th>24ч %</th>
+        <th>Объем торгов за 24ч</th>
+        <th>Общее количество</th>
+        <th>Рыночная капитализация</th>
+    </tr>
+
+    {% for c in currencies %}
+        <tr>
+            <td>
+                {% if c.name in session.favorites %}
+                    <form action="{% url 'out-of-favorites' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="from_url" value="{{ request.get_full_path }}">
+                        <input type="hidden" name="product_name" value="{{ c.name }}">
+                        <input type="submit" class="in-favorites" value="★">
+                    </form>
+                {% else %}
+                    <form action="{% url 'to-favorites' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="from_url" value="{{ request.get_full_path }}">
+                        <input type="hidden" name="product_name" value="{{ c.name }}">
+                        <input type="submit" class="not-in-favorites" value="☆">
+                    </form>
+                {% endif %}
+
+            </td>
+            <td>{{ c.name }}</td>
+            <td>{{ c.symbol }}</td>
+            <td>{{ c.price|floatformat:3 }}</td>
+            <td>{{ c.percent_change_24h }}</td>
+            <td>${{ c.volume_24h }}</td>
+            <td>{{ c.total_supply }}</td>
+            <td>{{ c.market_cap }}</td>
+        </tr>
+    {% endfor %}
+</table>

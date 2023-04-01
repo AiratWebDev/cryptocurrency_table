@@ -1,0 +1,15 @@
+{% extends 'components/base.html' %}
+
+{% block title %}
+    Список избранных криптовалют
+{% endblock %}
+
+{% block content %}
+    <h2>Список избранных криптовалют</h2>
+    {% if currencies %}
+        {% include 'components/table.html' %}
+    {% else %}
+        {% include 'components/empty_block.html' %}
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,11 @@
+/shelf/
+/workspace.xml
+/httpRequests/
+/dataSources/
+/dataSources.local.xml
+
+/apptrix_crypto/credentials.py
+/.idea
+/venv
+/db.sqlite3
+/etc/

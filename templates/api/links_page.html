@@ -1,0 +1,25 @@
+{% extends 'components/base.html' %}
+
+{% block title %}
+    Список ссылок для API
+{% endblock %}
+
+{% block content %}
+    <h2>Список всех API-ссылок</h2>
+    <div class="empty-block links">
+        <div class="links-item">
+            <span>Получение списка всех криптовалют:</span>
+            <span><a target="_blank" href="{% url 'api_currencies' %}">{% url 'api_currencies' %}</a></span>
+        </div>
+        <div class="links-item">
+            <span>Получение информации о конкретной криптовалюте по ее символьному коду:</span>
+            <span><a target="_blank" href="{% url 'api_symbol' 'btc' %}">{% url 'api_symbol' 'btc' %}</a></span>
+        </div>
+        <div class="links-item">
+            <span>Добавление, обновление, удаление криптовалюты по ее id:</span>
+            <span><a target="_blank"
+                     href="{% url 'api_currencies_param' 1 %}">{% url 'api_currencies_param' 1 %}</a></span>
+        </div>
+
+    </div>
+{% endblock %}
